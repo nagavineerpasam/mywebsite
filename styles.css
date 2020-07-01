@@ -48,6 +48,28 @@ li a{
     width: auto;
     max-height: 300%;
   }
+.animatedText {
+    /* Some styles */
+    visibility: hidden;
+    margin-top: -10px; /* So there is an optional slide up animation */
+}
+
+.animatedText::in-range {
+    animation-name: reveal 1.5s;
+    animation-delay: 1.5s; /* So that the user doesn't miss the animtaion */
+}
+
+@keyframes reveal {
+    0% {
+        visibility: hidden;
+        margin-top: -10px;
+    }
+
+    100% {
+        margin-top: 0;
+        visibility: auto;
+    }
+}
 
  
   
